@@ -1,8 +1,15 @@
+// Starting with first package
+import figlet from "figlet";
+
 const server = Bun.serve({
     port: 3000,
     fetch(request) {
+        // Local Variables
         const devName = "Gad";
-        return new Response(`It's Bun, Hey ${devName}!`);
+        const figletTest = figlet.textSync("Gad!");
+
+        return new Response(figletTest);
+        return new Response(`This is Bun, Hey ${devName}!`);
     },
 });
 
